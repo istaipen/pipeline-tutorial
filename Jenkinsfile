@@ -26,10 +26,6 @@ pipeline {
         }
 		
 		stage ('Sonar Code') {
-
-            tools {
-                maven 'maven_3_6_1'
-            }
             steps {
                 bat 'mvn -DskipTests sonar:sonar -Dsonar.host.url=http://localhost:9008 -Dsonar.login=admin -Dsonar.password=admin'
             }
