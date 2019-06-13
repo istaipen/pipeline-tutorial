@@ -27,7 +27,7 @@ pipeline {
 		
 		stage ('Sonar Code') {
             steps {
-                bat 'mvn -DskipTests sonar:sonar -Dsonar.host.url=http://localhost:9008 -Dsonar.login=admin -Dsonar.password=admin'
+                bat 'cd NumberGenerator & mvn -DskipTests sonar:sonar -Dsonar.host.url=http://localhost:9008 -Dsonar.login=admin -Dsonar.password=admin'
             }
         }
 		
