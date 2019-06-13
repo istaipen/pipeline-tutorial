@@ -16,6 +16,19 @@
 		</dependency>
 	</dependencies>
 
+	<properties>
+		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+			<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+			<sonar.jacoco.reportPath>${root.project.dir}/jacoco.exec</sonar.jacoco.reportPath>
+			<sonar.jdbc.driverClassName>com.mysql.jdbc.Driver</sonar.jdbc.driverClassName>
+			<sonar.web.javaOpts>-Xmx4g -Xms128m -XX:+UseConcMarkSweepGC -XX:-UseGCOverheadLimit</sonar.web.javaOpts>
+			<sonar.ce.javaOpts>-Xmx6g -Xms128m -XX:+UseConcMarkSweepGC -XX:-UseGCOverheadLimit</sonar.ce.javaOpts>
+			<test.args>-Xms256m -Xmx2g -XX:+UseConcMarkSweepGC -XX:-UseGCOverheadLimit</test.args>
+    </properties>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -27,6 +40,11 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.3.0.603</version>
+            </plugin>
 		</plugins>
 	</build>
 
