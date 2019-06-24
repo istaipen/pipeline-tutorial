@@ -21,11 +21,13 @@ pipeline {
         }
 		
 	    stage ('JUNIT'){
-			post {
-				success {
-                    junit 'NumberGenerator/target/surefire-reports/*.xml'
-                        }
-            }
+			steps{
+				post {
+					success {
+						junit 'NumberGenerator/target/surefire-reports/*.xml'
+							}
+				}	
+			}
 		}
 		
 		stage ('Sonar Code') {
