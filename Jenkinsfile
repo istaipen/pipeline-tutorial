@@ -32,6 +32,11 @@ pipeline {
             }
         }
 		
+		stage ('JFROG upload'){
+			steps{
+				bat 'curl -uadmin:password -T "http://localhost:8081/artifactory/libs-snapshot-local/'
+			}
+		}
 
     }
     
