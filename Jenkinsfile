@@ -34,7 +34,7 @@ pipeline {
 		
 		stage ('JFROG upload'){
 			steps{
-				bat 'curl -uadmin:password -T "http://localhost:8081/artifactory/libs-snapshot-local/'
+				bat 'curl -uadmin:password -T target/NumberGenerator-1.0-SNAPSHOT.jar "http://localhost:8081/artifactory/libs-snapshot-local/NumberGenerator-1.0-SNAPSHOT.jar"'
 			}
 		}
 
