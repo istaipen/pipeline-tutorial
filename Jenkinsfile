@@ -22,7 +22,7 @@ pipeline {
 		
 	    stage ('JUNIT Test'){
 			steps{
-					bat 'mvn test'
+					bat 'cd NumberGenerator & mvn test'
 			}
 		}
 		
