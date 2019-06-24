@@ -48,4 +48,16 @@
 		</plugins>
 	</build>
 
+   <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>DESKTOP-OQHQ7SL-releases</name>
+        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>DESKTOP-OQHQ7SL-snapshots</name>
+        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
 </project>
