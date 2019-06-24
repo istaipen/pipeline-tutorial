@@ -17,13 +17,16 @@ pipeline {
         stage ('Build') {
             steps {
                     bat 'cd NumberGenerator & mvn clean install'
-            }
-             post {
-                success {
+            }         
+        }
+		
+	    stage ('JUNIT'){
+			post {
+				success {
                     junit 'NumberGenerator/target/surefire-reports/*.xml'
                         }
-                 }
-        }
+            }
+		}
 		
 		stage ('Sonar Code') {
             steps {
